@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Calculator</title>
+        </head>
+        <body>
+            <script>
+                let num1 = +prompt('Enter a number');
+        let num2 = +prompt('Enter another number');
+        let operator = prompt('Enter an operator (+, -, *, /)');
+        let result;
+
+        if (operator === "*") {
+            result = num1 * num2;
+        } else if (operator === "-") {
+            result = num1 - num2;
+        } else if (operator === "+") {
+            result = num1 + num2;
+        } else if (operator === "/") {
+            if (num2 !== 0) {
+                result = num1 / num2;
+            } else {
+                result = "Error! Division by zero is not allowed.";
+            }
+        } else {
+            result = "Invalid operator!";
+        }
+
+        console.log("Result:", result);
+        alert("Result: " + result);
+
+        //using switch
+        let number1 = +prompt('Enter a number');
+        let number2 = +prompt('Enter another number');
+        let operators = prompt('Enter an operator (+, -, *, /)');
+        let results;
+
+        switch (operators) {
+            case "+":
+                results = number1 + number2;
+                break;
+            case "-":
+                results = number1 - number2;
+                break;
+            case "*":
+                results = number1 * number2;
+                break;
+            case "/":
+                results = (number2 !== 0) ? (number1 / number2) : "Error! Division by zero is not allowed.";
+                break;
+            default:
+                results = "Invalid operator!";
+        }
+        console.log("Result:", results);
+        alert("Result: " + results);
+            </script>
+        </body>
+    </html>
