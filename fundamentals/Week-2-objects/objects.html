@@ -5,6 +5,7 @@
     </head>
     <body>
         <script> 
+        //user object
             let user ={};
             user.name = 'John';
             user.surname = "Smith";
@@ -21,7 +22,7 @@
                 } 
                     return true;
             }
-
+            //salaries object
             let salaries = {
                 John: 100,
                 Ann: 160,
@@ -32,7 +33,7 @@
                 sum += salaries[key];
             }
             alert(sum);
-
+            //menu object
             let menu = {
                 width: 200,
                 height: 300,
@@ -47,6 +48,45 @@
             }
             multiplyNumeric(menu);
             console.log(menu);
+
+            //person object
+            let person = {
+                name: "John",
+                age: 25,
+                isStudent: true
+            };
+            alert(person.name);
+            alert(person["name"]);
+            person.hobby = "coding";
+            delete person.isStudent;
+
+            function countProperties(obj) {
+                let count = 0;
+                for (let key in obj) {
+                    count++; 
+                }
+                return count;
+            }
+            alert(countProperties(person));
+
+            //user2 object
+
+            function hasProperty(obj, key) {
+                if ("key" in obj) {
+                    return true;
+                }
+                return false;
+            }
+            let user2 = {
+                name: "Alice",
+                age: 25
+            };
+            user2.age = 26;
+            user2.city = "Nairobi";
+
+            for (let key in user2) {
+                alert(key + ':' + user2[key]);
+            }
         
 
 
