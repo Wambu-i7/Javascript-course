@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact Book</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            let user = {};
+
+            function addUser() {
+                let name = prompt('Please enter your name');
+                let phoneNumber = prompt('Please enter your Number');
+                let email = prompt('Please enter your email');
+
+                user[name] = {
+                    phone: phoneNumber,
+                    email: email
+                };
+            }
+            addUser();
+
+            function listAllUsers() {
+                for (let key in user) {
+                    alert(
+                    `Name: ${key}\nPhone: ${user[key].phone}\nEmail: ${user[key].email}`
+                    );
+                }
+            }
+            listAllUsers();
+
+            function searchIfUserExists() {
+                let name = prompt("Enter the name you want to search:");
+
+                if (name in user) {
+                    alert(`User ${name} exists!\nPhone: ${user[name].phone}\nEmail: ${user[name].email}`);
+                } else {
+                    alert(`User ${name} does NOT exist.`);
+                }
+            }
+            searchIfUserExists();
+
+            function countTotalContacts() {
+                let count = 0;
+                for (let key in user) {
+                    count++;
+                }
+                return count;
+                alert(count);
+            }
+            countTotalContacts();
+        </script>
+    </body>
+</html>
