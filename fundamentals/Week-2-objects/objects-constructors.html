@@ -1,0 +1,74 @@
+<DOCTYPE hml>
+    <html>
+        <head>
+            <title>Objects- constructors</title>
+        </head>
+        <body>
+            <script>
+                //constructors
+                function Calculator() {
+                    this.read = function(){
+                        this.a = +prompt('Enter a value a');
+                        this.b = +prompt('Enter another value b');
+                    }
+                    this.sum = function() {
+                        return this.a + this.b;
+                    }
+                    this.mul = function() {
+                        return this.a * this.b;
+                    }
+                }
+                let calculator = new Calculator();
+                calculator.read();
+
+                alert( "Sum=" + calculator.sum() );
+                alert( "Mul=" + calculator.mul() );
+
+                //accumulator
+                function Accumulator(startingValue) {
+                    this.value = startingValue;
+
+                    this.read = function() {
+                        this.value += +prompt('Enter how much to add', 0);
+                    };
+                }
+                let accumulator = new Accumulator(1);
+
+                accumulator.read(); // adds the user-entered value
+                accumulator.read(); // adds the user-entered value
+
+                alert(accumulator.value);
+
+                //person constructor
+                function Person(name, age) {
+                    this.name = name;
+                    this.age = age;
+                    this.sayHello = function () {
+                        alert(`Hi!, my name is ${this.name}`);
+                    }
+                    this.birthYear = function () {
+                        this.currentYear = 2025;
+                        return this.currentYear - this.age;
+                    }
+                }
+                let john = new Person("John", 30);
+                john.sayHello();
+                alert(john.birthYear());
+
+                //Bank constructor
+                function BankAccount(ownerName, balance) {
+                    this.ownerName = ownerName;
+                    this.balance = balance;
+                    this.deposit(amount) = function() {
+                        return this.newAmount +=this.amount;
+                    }
+                    this.withdraw(amount) = function () {
+                        return this.newAmount -=this.amount;
+                    }
+                    this.getBalance = function() {
+                        return this.newAmount;
+                    }
+                }
+            </script>
+        </body>
+    </html>
