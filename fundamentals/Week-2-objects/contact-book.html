@@ -20,6 +20,7 @@
                 };
             }
             addUser();
+            addUser();
 
             function listAllUsers() {
                 for (let key in user) {
@@ -50,6 +51,21 @@
             }
             let totalContacts = countTotalContacts();
             alert(totalContacts); 
+
+            function deleteContact() {
+                    let name = prompt("Enter the name you want to delete:");
+                    if (name in user) {
+                        let confirmDelete = confirm(`Are you sure you want to delete ${name}?`);
+                        if (confirmDelete) {
+                            delete user[name];
+                            alert(`User ${name} has been deleted.`);
+                        }
+                    } else {
+                            alert(`User ${name} does NOT exist.`);
+                        }
+                    }
+            deleteContact();
+                     
         </script>
     </body>
 </html>

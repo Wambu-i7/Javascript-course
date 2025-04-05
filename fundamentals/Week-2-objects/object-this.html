@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>This in objects</title>
+    </head>
+    <body>
+        <script>
+            //Create an Object with Methods
+            let calculator = {
+                read() {
+                    this.a = +prompt('Enter a value');
+                    this.b = +prompt('enter another value');
+                },
+                sum() {
+                    return this.a + this.b;
+              },
+                mul() {
+                    let result = this.a * this.b;
+                    return result;
+                }
+            }
+            calculator.read();
+            alert( calculator.sum() );
+            alert( calculator.mul() );
+
+
+            let car = {
+                make: "Toyota",
+                model: "Camry",
+                year: 2015,
+                getCarInfo() {
+                    alert(`This car is a ${this.year} ${this.make} Camry`)
+                }
+            };
+            car.getCarInfo();
+
+            //Modify Object Properties with a Method
+            let counter = {
+                count: 0,
+                increment() {
+                    this.count++;
+                },
+                decrement() {
+                    this.count--;
+                },
+                getCount() {
+                    alert(this.count);
+                }
+            };
+            counter.increment();
+            counter.decrement();
+            counter.getCount();
+
+            //Chained Methods
+            let bankAccount = {
+                balance: 1000,
+                deposit(amount) {
+                    this.balance += amount;
+                    return this;
+                },
+                withdraw(amount) {
+                    this.balance -= amount;
+                    return this;
+                },
+                getBalance() {
+                    alert(this.balance);
+                    return this;
+                }
+            };
+            bankAccount.deposit(200).withdraw(100).getBalance();
+        </script>
+    </body>
+</html>
