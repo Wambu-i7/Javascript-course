@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mood tracker</title>
+    </head>
+    <body>
+        <script>
+            let action = '';
+            //This array is used to store all the moods.
+            //Each mood entry is an object with three properties: mood, day, and reason.
+            let moodsList = [];
+            while(action !== null) {
+                let moodInput = prompt("How are you feeling today? (e.g. happy, sad, angry)");
+                if (moodInput === null) {
+                    alert("Goodbye! Stay positive!");
+                    break; // Exit the loop immediately if the user cancels
+                }
+                let dayInput = prompt("What day is it today?");
+        
+                let reasonInput = prompt("Why are you feeling that way?");
+
+                moodsList.push({
+                mood: moodInput,
+                day: dayInput,
+                reason: reasonInput
+            });
+
+            // Display all the previous moods
+            let moodHistory = "Mood History:\n";
+            for (let i = 0; i < moodsList.length; i++) {
+                moodHistory += `${i + 1}. Mood: ${moodsList[i].mood}, Day: ${moodsList[i].day}, Reason: ${moodsList[i].reason}\n`;
+            }
+
+            // Show the stored information back to the user
+            alert(moodHistory);
+        }
+        </script>
+    </body>

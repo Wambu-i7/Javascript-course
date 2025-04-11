@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shopping list</title>
+    </head>
+    <body>
+        <script>
+            let shoppingList = [];
+            let action = "";
+
+            while (action !== "exit") {
+              action = prompt("What do you want to do? (add/view/remove/exit)");
+
+              // Handle Cancel
+              if (action === null) {
+                console.log("App cancelled by user.");
+                break;
+              }
+
+              action = action.toLowerCase(); // Normalize input
+
+              if (action === "add") {
+                const item = prompt("Enter item to add:");
+                if (item === null) {
+                  console.log("Item add cancelled.");
+                  continue;
+                }
+
+                if (item.trim() === "") {
+                  console.log("Cannot add an empty item.");
+                  continue;
+                }
+
+                shoppingList.push(item.trim());
+                console.log(`"${item.trim()}" added to list.`);
+
+              } else if (action === "view") {
+                if (shoppingList.length === 0) {
+                  console.log("Your shopping list is empty.");
+                } else {
+                  console.log("🛒 Your Shopping List:");
+                  for (let i = 0; i < shoppingList.length; i++) {
+                    console.log(`${i + 1}. ${shoppingList[i]}`);
+                  }
+                }
+
+              } else if (action === "remove") {
+                const itemToRemove = prompt("Enter item to remove:");
+                if (itemToRemove === null) {
+                  console.log("Remove cancelled.");
+                  continue;
+                }
+
+                const index = shoppingList.indexOf(itemToRemove.trim());
+                if (index !== -1) {
+                  const sure = confirm(`Are you sure you want to remove "${itemToRemove}"?`);
+                  if (sure) {
+                    shoppingList.splice(index, 1);
+                    console.log(`"${itemToRemove}" removed from list.`);
+                  } else {
+                    console.log("Remove action cancelled.");
+                  }
+                } else {
+                  console.log(`"${itemToRemove}" not found in the list.`);
+                }
+
+                } else if (action !== "exit") {
+                  console.log("Please enter a valid option: add, view, remove, or exit.");
+                  continue;
+                }
+              }
+        </script>
+    </body>
+</html>

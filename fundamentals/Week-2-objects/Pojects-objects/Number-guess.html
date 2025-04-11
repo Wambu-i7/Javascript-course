@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Number-guessing Game
+        </title>
+    </head>
+    <body>
+        <script>
+            let secretNumber = Math.floor(Math.random() * 100) + 1;
+
+            let guess;
+            let attempts = 0;
+
+            while (true) {
+                guess = prompt("Guess the number between 1 and 100:");
+                //check if user canceals
+                if (guess === null) {
+                    alert("Game cancelled. See you next time!");
+                    break;
+                }
+
+                guess = +guess;
+                attempts++;
+
+                if (isNaN(guess)) {
+                    alert("Please enter a valid number.");
+                    continue;
+                }
+            
+                if (guess > secretNumber) {
+                    alert('Number is too high');
+                } else if (guess === secretNumber) {
+                    alert(`Perfect You guessed it in ${attempts} tries.`);
+                }else {
+                    alert('Number is too low');
+                }
+            }
+        </script>
+    </body>
+</html>

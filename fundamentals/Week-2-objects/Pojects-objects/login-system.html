@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login system</title>
+    </head>
+    <body>
+        <script>
+            let correctUsername = 'Rose';
+            let correctPassword = "1234";
+            let count = 0;
+
+            while(count < 3) {
+                let username = prompt('Enter username:', '');
+                let password = prompt("Enter password:",'');
+
+                if (username === null || password === null) {
+                alert("Login cancelled.");
+                break;
+            }
+            if (username === correctUsername && password === correctPassword) {
+                alert("✅ Login successful! Welcome, Rose!");
+                break; // Exit loop if successful
+            } else {
+                count++;
+                if (count < 3) {
+                    alert(`❌ Incorrect credentials. You have ${3 - count} attempt(s) left.`);
+                } else {
+                    alert("🚫 Too many failed attempts. Access denied.");
+                }
+            }
+}
+
+        </script>
+    </body>
+</html>
