@@ -10,13 +10,13 @@
                     this.read = function(){
                         this.a = +prompt('Enter a value a');
                         this.b = +prompt('Enter another value b');
-                    }
+                    };
                     this.sum = function() {
                         return this.a + this.b;
-                    }
+                    };
                     this.mul = function() {
                         return this.a * this.b;
-                    }
+                    };
                 }
                 let calculator = new Calculator();
                 calculator.read();
@@ -45,11 +45,11 @@
                     this.age = age;
                     this.sayHello = function () {
                         alert(`Hi!, my name is ${this.name}`);
-                    }
+                    };
                     this.birthYear = function () {
                         this.currentYear = 2025;
                         return this.currentYear - this.age;
-                    }
+                    };
                 }
                 let john = new Person("John", 30);
                 john.sayHello();
@@ -59,16 +59,21 @@
                 function BankAccount(ownerName, balance) {
                     this.ownerName = ownerName;
                     this.balance = balance;
-                    this.deposit(amount) = function() {
-                        return this.newAmount +=this.amount;
-                    }
-                    this.withdraw(amount) = function () {
-                        return this.newAmount -=this.amount;
-                    }
+                    this.deposit = function(amount) {
+                        this.balance += amount;
+                    };
+                    this.withdraw = function(amount) {
+                        this.balance -= amount;
+                    };
                     this.getBalance = function() {
-                        return this.newAmount;
-                    }
+                        return this.balance;
+                    };
                 }
+                let acc = new BankAccount("Rose", 1000);
+                acc.deposit(500);
+                acc.withdraw(200);
+                console.log(acc.getBalance()); // 1300
+
             </script>
         </body>
     </html>
