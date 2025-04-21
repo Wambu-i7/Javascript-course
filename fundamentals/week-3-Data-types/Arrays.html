@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arrays</title>
+    </head>
+    <body>
+        <script>
+            let styles = ["Jazz", "Blues"];
+            alert(styles);
+            styles.push("Rock-n-Roll");
+            alert(styles);
+            styles[Math.floor((styles.length - 1) / 2)] = "Classics";
+            alert(styles.shift());
+            styles.unshift("Rap", "Reggae");
+            alert(styles);
+            
+
+            function sumInput() {
+                let numbers = [];
+
+                while (true) {
+  
+                    let value = prompt('Enter a value', 0);
+
+                    if (value === null || value.trim() === "" || isNaN(value)) break;
+
+                    numbers.push(+value);
+                    
+                }
+                let sum = 0;
+                for (let number of numbers) {
+                    sum += number;
+                }
+                return sum;
+                }
+
+                alert( sumInput() );
+                            
+
+        </script>
+    </body>
+</html>
