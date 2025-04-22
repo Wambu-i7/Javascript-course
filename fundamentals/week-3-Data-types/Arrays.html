@@ -35,6 +35,115 @@
                 }
 
                 alert( sumInput() );
+
+                //A maximal subarray.
+                //The task is: find the contiguous subarray of arr with the maximal sum of items.
+
+                function getMaxSubSum(arr) {
+                let maxSum = 0;
+                let currentSum = 0;
+
+                for (let num of arr) {
+                    currentSum = currentSum + num; 
+
+                    if (currentSum > maxSum) {
+                    maxSum = currentSum;
+                    }
+
+                    if (currentSum < 0) {
+                    currentSum = 0;
+                    }
+                }
+
+                return maxSum;
+                }
+
+
+                // Write a function getLastElement(arr) that returns the last item in the 
+                // array.
+
+                function getLastElement(arr) {
+                    return arr[arr.length - 1];
+                }
+
+                // Write a function modifyArray(arr, value) that adds
+                // `value` to the beginning and end of the array.
+                function modifyArray(arr, value) {
+                    arr.push(value);
+                    arr.unshift(value);
+                }
+
+                //// Write a function containsItem(arr, item) 
+                // that returns true if `item` is in `arr`.
+                function containsItem(arr, item) {
+                    for (let element of arr) {
+                        if (element === item) {
+                            return true;
+                        }
+                        
+                    }
+                    return false;
+                }
+
+            // Write a function sumArray(arr) that returns 
+            // the sum of all elements.
+
+            function sumArray(arr) {
+                let sum = 0;
+                for (let i =0; i < arr.length; i++) {
+
+                    sum += arr[i];
+                    // can also use -> for (let num of arr) {
+                    //  sum += num;
+                }
+                return sum;
+            }
+
+            // Write a function getMax(arr) that returns the 
+            // largest number in the array.
+            function getMax(arr) {
+                let max = arr[0];
+                
+                for (let num of arr) {
+                    if (num > max) {
+                        max = num;      
+                    }
+                }
+                return max;
+            }
+
+            // Write a function removeNegatives(arr) that returns a 
+            // new array with only positive numbers.
+            function removeNegatives(arr) {
+                return arr.filter( function(numb) {
+                    return numb >= 0;
+                });
+            }
+            // Write a function doubleArray(arr) that returns a 
+            // new array with each value doubled.
+            function doubleArray(arr) {
+                let doubledArray = [];
+                for (let item of arr) {
+                    doubledArray.push(item * 2);
+                }
+                return doubledArray;
+            }
+
+            // Write a function reverseArray(arr) that returns a 
+            // new array in reverse order.
+            function reverseArray(arr) {
+                let reversedArray = arr.reverse();
+                return reversedArray;
+            }
+
+
+
+
+
+            
+
+
+
                             
 
         </script>
