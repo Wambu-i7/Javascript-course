@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Basics Topics</title>
+    </head>
+    <body>
+        <script>
+            "use strict"
+            console.log('Hello');
+            //variables, data types and coversions.
+            let age = '27';
+            let ageNumber = (+age) + 5;
+            console.log(ageNumber);
+            console.log(typeof(true));
+            console.log(typeof('hello'));
+            console.log(typeof(42));
+
+            //user interaction.
+            let favColor = prompt('Please enter your favourite color');
+            alert(favColor);
+            let answer = confirm('Do you like coding?');
+            alert(answer);
+
+            //Operators, Maths, Comparisons.
+            function areaRectangle(width, height) {
+                    let area = width * height;
+                    console.log(area);
+            }
+            areaRectangle(4, 12);
+
+            let num1 = 15;
+            let num2 = 10;
+            if (num1 > num2) {
+                console.log('15 is greater than 10');
+            } else if (num1 < num2) {
+                console.log('15 is less than 10');
+            } else {
+                console.log('15 is equal to 10');
+            }
+
+            //Conditions & logical operators.
+            function ifNumber(num) {
+                if( num > 0 ) {
+                    console.log('num is positive');
+                } else if ( num < 0 ) {
+                    console.log('num is negative');
+                } else if (num == 0) {
+                    console.log('num is zero');
+                }
+            }
+            
+            (age >= 18) ?  alert('Adult') : alert('Child');
+            let username;
+            alert(username ?? "default");
+
+            //Loops and Switch
+            for (let i = 1; i <= 5; i++) {
+                console.log(i);
+            }
+        
+            let password = 1234;
+            let enteredPassword = prompt('Enter your password');
+            while(enteredPassword !== password) {
+                enteredPassword = prompt('Please enter correct password');
+            } 
+
+            let day = prompt('Enter the day today').toLowerCase();
+
+            switch(day) {
+                case 'monday':
+                console.log('Monday');
+                    break;
+                case 'tuesday':
+                    console.log('Tuesday');
+                    break;
+                case 'wednesday':
+                    console.log('Wednesday');
+                    break;
+                case 'thursday':
+                    console.log('Thursday');
+                    break;
+                case 'friday':
+                    console.log('Friday');
+                    break;
+                case 'saturday':
+                    console.log('Saturday');
+                    break;
+                case 'sunday':    
+                    console.log('Sunday');
+                    break;
+                default:
+                    console.log('Invalid input');
+            }
+
+            //functions
+            function sayHello() {
+                console.log('Hello!');
+            }
+            sayHello();
+
+            const squareNumber = function(num) {
+                let squaredNumber = num * num;
+                return squaredNumber;
+            };
+            let result = squareNumber(6);
+            console.log(result);
+           
+
+            let mul = (a, b) => a * b;
+            console.log(mul(3, 4));
+
+            //Objects
+            let car = {
+                make: 'Toyota',
+                model: 2009,
+                start() {
+                    console.log('Vroom!');
+                },
+                describe() {
+                    alert(this.make);
+                    alert(this.model);
+                }
+            };
+            car.start();
+            car.describe();
+
+            //Constructor Function
+            function Person(name, age, address) {
+                this.name = name;
+                this.age = age;
+                this.address = address;
+            }
+            let user = new Person('Rose', 27, 'Kenya');
+
+            //Optional Chaining
+            console.log(user?.address?.country);
+
+
+
+
+            
+            
+        </script>
+    </body>
+</html>
