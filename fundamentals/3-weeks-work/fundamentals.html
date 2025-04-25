@@ -135,6 +135,38 @@
             //Optional Chaining
             console.log(user?.address?.country);
 
+            //Numbers
+            num = math.floor(math.random() * 50) + 1;
+            console.log(num);
+            let number = 5.6789;
+            let roundedNum = +number.toFixed(1);
+            console.log(roundedNum);
+            let parsedNum = parseInt('45.7');
+            console.log(parsedNum);
+
+            //Strings
+            let name = 'Rose';
+            console.log(name.length);
+            console.log(name.at(0));
+            console.log(name.at(-1));
+
+            let str = "hello world";
+            console.log(str.toUpperCase());
+            let subString = str.slice(0, 5) + " " + 'Rose';
+            console.log(subString);
+
+            //Arrays
+            let fruits = ['Apple', 'Banana', 'Grape'];
+            fruits.push('Mango');
+            console.log(fruits);
+            fruits.pop();
+            console.log(fruits);
+            fruits.unshift('Pineapple');
+            console.log(fruits);
+            fruits.shift();
+            console.log(fruits);
+
+
 
 
 
