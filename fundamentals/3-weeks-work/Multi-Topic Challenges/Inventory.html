@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Guest List Manager</title>
+    </head>
+    <body>
+        <script>
+            let items = [];
+
+            // Add a new item to the inventory
+            let newItem = prompt("Enter an item to add to inventory");
+            items.push(newItem);
+            console.log(items);
+
+            // Remove the last item from the inventory
+            let removedItem = items.pop();
+            console.log("Removed:", removedItem);
+            console.log("Current inventory:", items);
+
+            // Check if inventory is empty
+            if (items.length === 0) {
+            alert("Inventory empty");
+            } else {
+            alert("Inventory has items");
+            }
+
+
+            let inventory = [];
+
+            numOfItems = +prompt('How many items do you want to store?');
+            for ( i = 0; i < numOfItems; i++) {
+                let item = prompt('Enter item:');
+                inventory.push(item);
+            }
+            console.log(inventory);
+
+            inventory.pop();
+            console.log(inventory);
+            inventory.shift();
+            console.log(inventory);
+
+            if (inventory.length === 0) {
+                alert('Empty inventory');
+            }
+            console.log(inventory);
+
+                
+        </script>
+    </body>
+</html>

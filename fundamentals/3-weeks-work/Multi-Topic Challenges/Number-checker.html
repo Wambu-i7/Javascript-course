@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>     Number checker and calculator</title>
+    </head>
+    <body>
+        <script>
+            let num = prompt('Enter a number.');
+            if (num === null || num.trim() === "") {
+            alert("No input");
+            } else {
+            num = +num;
+            if (num % 2 === 0) {
+                alert("Number is even");
+            } else {
+                alert("Number is odd");
+            }
+            }
+
+            let num1 = prompt('Enter a number');
+            let num2 = prompt('Enter another number');
+            let operator = prompt('Enter an operator (+, -, *, /)');
+            if (num1 === null || num1.trim() === "" || num2 === null || num2.trim() === "" ) {
+            alert("No input");
+            } else {
+            num1 = +num1;
+            num2 = +num2;
+            let result;
+
+            switch(operator) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    if (num2 === 0) {
+                        alert("Cannot divide by zero!");
+                        break;
+                    }
+                    result = num1 / num2;
+                    break;
+                default:
+                    alert("Invalid operator");
+                    break;
+                }
+
+            if (result !== undefined) {
+                alert(`Result is: ${result}`);
+            }   
+        }
+        </script>
+    </body>
+</html>

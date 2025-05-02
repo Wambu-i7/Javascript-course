@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Guest List Manager</title>
+    </head>
+    <body>
+        <script>
+            let numberGuest = +prompt('How many guests are there?');
+            console.log(numberGuest);
+
+            let guests = [];
+
+            for (let i = 0; i < numberGuest; i++) {
+                let guestName = prompt(`Enter name of guest ${i + 1}`);
+                guests.push(guestName);
+            }
+
+            // Add a new guest
+            guests.push('New Guest');
+
+            // Remove the first guest
+            guests.shift();
+
+            // Display final guest list
+            console.log(guests);
+        </script>
+    </body>
+</html>
