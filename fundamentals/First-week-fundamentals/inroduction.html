@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript intro</title>
+    </head>
+    <body>
+        <script>
+            function getMin(a, b) {
+                if (a > b) {
+                    return b;
+                } else {
+                    return a;
+                }
+            }
+            console.log(getMin(2, 5));
+
+            function pow(x, n) {
+                return x ** n;
+            }
+            console.log(pow(3, 2));
+
+            //Arrow functions
+            //square
+            const square = num => num * num;
+            console.log(square(4));
+
+            const greet = name => `Hello ${name}!`;
+            console.log(greet('Rose'));
+
+            setTimeout(() => {
+                console.log("Time's up!");
+            }, 2000);
+            
+            const multiply = (a, b) => a * b;
+            console.log(multiply(3, 5)); 
+
+
+            /*const name = prompt("What is your name?");
+
+            if (name) {
+                const sure = confirm("Are you sure?");
+                if (sure) {
+                    alert(`Welcome, ${name}!`);
+                }
+                    alert('Goodbye!');
+            } else {
+                alert("You did no enter a name");
+            }
+            */
+            console.log(Number("123"));   // ?
+            console.log(Number("Hello")); // ?
+            console.log(Number(true));    // ?
+            console.log(Number(false));   // ?
+            console.log(Number(null));    // ?
+            console.log(Number(undefined)); // ?
+            //If lse statement
+            let age = +prompt('What is your age?');
+            if (age >= 18) {
+                console.log('You can vote');
+            } else {
+                console.log('Sorry you are a minor');
+            }
+
+            //using ternary ?
+
+            let age = 2;
+            let message = (age >= 18) ? 'You can vote' :'Sorry minor';
+            console.log(message);
+
+
+            let hasLicense = confirm('Do you have a license?');
+            let ownsCar = confirm('Do you own a car?');
+            if (hasLicense && ownsCar){
+                console.log('You can drive');
+            } else {
+                console.log('You cannot drive');
+            }
+            //A value is defined if its neither null nor undefined.
+            let user = null;
+            //if user is defined then user it is. If it isn't defined then guest.
+            //user is nul so the first defined is Guest.
+            console.log(user ?? "Guest");
+
+            let name = "Rose";
+            //name is defined so the variable under name will be printe to the console.
+            console.log(name ?? "Guest");
+            // ternary operator to calculate and print the final price after the discount.
+            let shoppingAmount = +prompt("Enter amount");    
+
+            let discount = (shoppingAmount >= 100) ? (shoppingAmount * 0.1) : (shoppingAmount * 0.05);  
+
+            let finalPrice = shoppingAmount - discount; 
+
+            console.log("Discount:", discount);
+            console.log("Final price after discount:", finalPrice);
+
+
+        </script>
+    </body>
+</html>

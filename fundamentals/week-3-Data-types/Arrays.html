@@ -135,6 +135,18 @@
                 let reversedArray = arr.reverse();
                 return reversedArray;
             }
+            
+            // Write a function countOccurrences(arr, value) 
+            // that returns how many times `value` appears.
+            function countOccurrences(arr, value) {
+                let count = 0;
+                for (let data of arr) {
+                    if (data === value) {
+                        count++;
+                    }
+                }
+                return count;
+            }
 
 
 

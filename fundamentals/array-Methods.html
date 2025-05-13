@@ -46,6 +46,27 @@
                 }
             }
 
+            let arr = [5, 2, 1, -10, 8];
+
+            arr.sort((a, b) =>  b - a);
+
+            alert( arr );
+
+            //Copy and sort array.
+
+            let array1 = ["HTML", "JavaScript", "CSS"];
+
+            function copySorted(arr) {
+                return arr.slice().sort();
+            }
+            let sorted = copySorted(array1);
+            alert( sorted );
+            alert( array1 );
+
+            //Extendable calculator
+            
+
+            
         </script>
     </body>
 </html>

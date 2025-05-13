@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>array Methods</title>
+    </head>
+    <body>
+        <script>
+           function Calculator() {
+            // An object to store the operator names as keys and their functions as values
+            this.methods = {
+                "+": (a, b) => a + b,   // Adds two numbers
+                "-": (a, b) => a - b    // Subtracts b from a
+            };
+
+            // Method to calculate a result based on a string input like "3 + 5"
+            this.calculate = function(str) {
+                // Split the string by spaces, example: "3 + 5" -> ["3", "+", "5"]
+                let parts = str.split(" ");
+
+                let a = +parts[0];      // Convert first part to number
+                let op = parts[1];      // Operator (like +, -, *, etc.)
+                let b = +parts[2];      // Convert second number to number
+
+                // Check if the operator exists in this.methods, and if a and b are valid numbers
+                if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+                return NaN;  // Return NaN if something's wrong
+                }
+
+                // Call the corresponding function from this.methods and return the result
+                return this.methods[op](a, b);
+            };
+
+            // Method to add a new operation to the calculator
+            this.addMethod = function(name, func) {
+                this.methods[name] = func;
+            };
+            }
+
+            // Example usage:
+
+            let calc = new Calculator();
+
+            // Built-in operations:
+            alert(calc.calculate("3 + 7")); // 10
+
+            // Extend it with new operations:
+            calc.addMethod("*", (a, b) => a * b);
+            calc.addMethod("/", (a, b) => a / b);
+            calc.addMethod("**", (a, b) => a ** b);
+
+            alert(calc.calculate("2 * 3"));  // 6
+            alert(calc.calculate("9 / 3"));  // 3
+            alert(calc.calculate("2 ** 3")); // 8
+
+
+        </script>
+    </body>
+</html>
