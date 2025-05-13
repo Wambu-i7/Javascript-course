@@ -63,7 +63,49 @@
             alert( sorted );
             alert( array1 );
 
-            //Extendable calculator
+            //Map to names
+            let users = [
+                { name: "John", age: 25 },
+                { name: "Mary", age: 23 },
+                { name: "Smith", age: 30 }
+            ];
+            let names = users.map(user => user.name);
+
+            alert(names);
+
+            let products = [
+                { name: "Laptop", price: 800, category: "Electronics" },
+                { name: "Shirt", price: 25, category: "Clothing" },
+                { name: "Coffee Maker", price: 100, category: "Kitchen" }
+            ];
+
+            let productNames = products.map(item => item.name);
+
+            let productPrices = products.map(item => item.price);
+
+            alert(productNames);
+            alert(productPrices);
+
+            //SORT
+            function sortByAge(users) {
+                let sortedAges = ages.sort((a,b) => a.age - b.age);
+            }
+            let john = { name: "John", age: 25 };
+            let pete = { name: "Pete", age: 30 };
+            let mary = { name: "Mary", age: 28 };
+
+            let arr = [ pete, john, mary ];
+
+            sortByAge(arr);
+
+            // now sorted is: [john, mary, pete]
+            alert(arr[0].name); // John
+            alert(arr[1].name); // Mary
+            alert(arr[2].name); // Pete
+
+
+           
+
             
 
             

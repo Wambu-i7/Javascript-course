@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>array Methods</title>
+    </head>
+    <body>
+        <script>
+
+            let user = [
+                { name: "John", surname: "Smith", id: 1 },
+                { name: "Pete", surname: "Hunt", id: 2 },
+                { name: "Mary", surname: "Key", id: 3 }
+            ];
+
+
+            let mappedUser  = user.map(item => ({
+                    fullName : `${item.name} ${item.surname}`,
+                    id: item.id
+                }));
+
+            alert(mappedUser);
+            alert( mappedUser[0].fullName );
+
+
+
+
+        </script>
+    </body>
+</html>
