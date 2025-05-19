@@ -1,0 +1,150 @@
+# 📚 JavaScript Fundamentals — Real-World Exercises Checklist ✅
+
+### ✅ Hello, world!
+- [ ] Write a script that displays “Hello, Rose!” in an alert.
+
+### ✅ Code structure
+- [ ] Create a file with 3 code blocks: a variable, an alert, and a console.log in order.
+
+### ✅ The modern mode, "use strict"
+- [ ] Write a script with and without "use strict" to see the difference when declaring a variable without `let`.
+
+### ✅ Variables
+- [ ] Declare variables for your name, age, country, and favorite hobby, and alert them.
+
+### ✅ Data types
+- [ ] Declare a string, number, boolean, null, undefined, and object.
+- [ ] Log their types using `typeof`.
+
+### ✅ Interaction: alert, prompt, confirm
+- [ ] Prompt for the user’s name.
+- [ ] Ask for confirmation to display it.
+- [ ] If confirmed, alert it.
+
+### ✅ Type Conversions
+- [ ] Prompt for a number.
+- [ ] Convert it and perform a calculation.
+- [ ] Log the result and type.
+
+### ✅ Basic operators, maths
+- [ ] Build a calculator for +, -, *, /, and % using prompt and alert.
+
+### ✅ Comparisons
+- [ ] Compare two numbers and display whether the first is greater, less, or equal.
+
+### ✅ Conditional branching: if, '?'
+- [ ] Prompt for age.
+- [ ] Use `if-else` and `?` to decide access permission (18+).
+
+### ✅ Logical operators
+- [ ] Prompt for age and membership (confirm).
+- [ ] Grant access if age ≥ 18 **and** membership is true.
+
+### ✅ Nullish coalescing operator '??'
+- [ ] Prompt for a nickname.
+- [ ] Display “Guest” if null or empty using `??`.
+
+### ✅ Loops: while and for
+- [ ] Write a `for` and `while` loop counting 1–10.
+
+### ✅ The "switch" statement
+- [ ] Prompt for a day number (1–7) and display the day name using `switch`.
+
+### ✅ Functions
+- [ ] Write a `greetUser(name)` function and call it.
+
+### ✅ Function expressions
+- [ ] Create a function expression that multiplies two numbers.
+
+### ✅ Arrow functions, the basics
+- [ ] Rewrite the above as an arrow function.
+
+### ✅ JavaScript specials
+- [ ] Log `undefined + 1`, `null + 1`, `false + 1`. Predict and verify.
+
+### ✅ Code quality
+- [ ] Write messy code.
+- [ ] Refactor it cleanly.
+
+### ✅ Debugging in the browser
+- [ ] Write a function with a bug.
+- [ ] Use DevTools and console.log to debug.
+
+### ✅ Coding Style
+- [ ] Clean up your calculator/greeter program with proper styling.
+
+### ✅ Comments
+- [ ] Add comments explaining each line of a small program.
+
+### ✅ Ninja code
+- [ ] Write unreadable, compact code.
+- [ ] Rewrite it cleanly.
+
+### ✅ Automated testing with Mocha
+- [ ] Write a function.
+- [ ] Create 2–3 Mocha tests for it.
+
+### ✅ Polyfills and transpilers
+- [ ] Research a modern JS feature (like `Array.flat()`).
+- [ ] Write a polyfill or explain Babel transpiling.
+
+### ✅ Objects: the basics
+- [ ] Create a `car` object with properties.
+
+### ✅ Objects
+- [ ] Add and delete properties from your `car` object.
+
+### ✅ Object references and copying
+- [ ] Create and copy an object using `Object.assign`.
+- [ ] Prove they’re independent.
+
+### ✅ Garbage collection
+- [ ] Create an object and set it to null.
+- [ ] Observe in DevTools.
+
+### ✅ Object methods, "this"
+- [ ] Add a method to `car` that logs its brand and model.
+
+### ✅ Constructor, operator "new"
+- [ ] Write a `Person(name, age)` constructor.
+- [ ] Create two instances.
+
+### ✅ Optional chaining '?.'
+- [ ] Create an object without a nested property.
+- [ ] Safely access it using `?.`.
+
+### ✅ Symbol type
+- [ ] Create a symbol property in an object.
+- [ ] See how it behaves in a `for...in` loop.
+
+### ✅ Object to primitive conversion
+- [ ] Create an object with a `toString()` method.
+- [ ] Log it.
+
+### ✅ Data types
+- [ ] Prompt for inputs and log their types with `typeof`.
+
+### ✅ Methods of primitives
+- [ ] Create a string and use `toUpperCase()`, `slice()`, and `includes()`.
+
+### ✅ Numbers
+- [ ] Prompt for two numbers.
+- [ ] Display their sum, difference, product, quotient, remainder, and result to 2 decimals.
+
+### ✅ Strings
+- [ ] Take a full name input.
+- [ ] Extract and log first and last names.
+
+### ✅ Arrays
+- [ ] Create an array of favorite fruits.
+- [ ] Add, remove, and access items.
+
+### ✅ Array methods
+- [ ] Use `push`, `pop`, `shift`, `unshift`, `splice`, `slice`, and `concat`.
+
+### ✅ Iterables
+- [ ] Create a number array.
+- [ ] Use `for...of` to log each item.
+- [ ] Convert a string to an array using `Array.from()`.
+
+---

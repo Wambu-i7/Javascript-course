@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Basics</title>
+    </head>
+    <body>
+        <script>
+            let greeting = 'Hello, Rose!';
+            alert(greeting);
+            console.log(`Hi, i would like to say ${greeting}`);
+
+            let name = 'Rose';
+            let age= 28;
+            let country = 'Kenya';
+            let hobby = 'Reading';
+            
+            alert(`My name is ${name}, I am ${age} years old, I live in ${country} and I love ${hobby}.`);
+
+            let bol = true;
+            let pot = null;
+            let book = undefined;
+            let bag = {
+                book : 1,
+                pen : 2,
+                eraser : 1
+            };
+            console.log(typeof(country), typeof(age), typeof(book), typeof(pot), typeof(bag));
+
+            let userName = prompt('Please enter your name');
+            let confirmName = confirm(`Is ${userName} your name?`);
+            if(confirmName) {
+                alert(userName);
+            }
+
+            let num = +prompt('Please enter a number');
+            let num2 = +prompt('Please enter another number');
+            let result = num * num2;
+            console.log(`The result is ${result} and the type is ${ typeof (result)}`);
+
+            
+
+
+        </script>
+    </body>
+</html>
