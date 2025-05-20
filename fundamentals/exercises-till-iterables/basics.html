@@ -37,8 +37,64 @@
             let result = num * num2;
             console.log(`The result is ${result} and the type is ${ typeof (result)}`);
 
-            
+            //Basic operators, Math.
+            let number1 = +prompt('Please enter a number');
+            let operator = prompt('Enter an operator');
+            let number2 = +prompt('Enter another number');
 
+            let answer = 0;
+
+            if(operator === '+') {
+                answer = number1 + number2;
+            } else if(operator === '-') {
+                answer = number1 - number2;
+            } else if(operator === '*') {
+                answer = number1 * number2;
+            } else if(operator === '/' && number1 !== 0) {
+                answer = number1 / number2;
+            } else if(operator === '%') {
+                answer = number1 % number2;
+            }
+            else {
+                alert('Invalid operator entered!');
+            }
+
+            alert(`The result of ${number1} ${operator} ${number2} is ${answer}`);
+
+            //Comparisons
+            if (number1 > number2) {
+                alert(`${number1} is greater than ${number2}`);
+            } else if (number1 < number2) {
+                alert(`${number1} is Less than ${number2}`);
+            } else if (number1 === number2) {
+                alert(`${number1} is equal to ${number2}`);
+            }
+            
+            //conditional branching.
+            let ages = +prompt('Please enter your age');
+            (ages >= 18) ? alert('Permission granted') : alert('Permission Denied');
+
+            //Nullish coalescing operator.
+            let nickName = prompt('Enter your nickname');
+            alert((nickName === '' || nickName === null) ? 'Guest' : nickName);
+            
+            //Loops: while and for.
+            let a = 1;
+            while(a <= 10) {
+                alert(a);
+                a++;
+            }
+            for (let i = 1; i <= 10; i++) {
+                alert(i);
+            }
+            //Grocery List tally
+           
+
+            for (let item = 1; item <= 5; item++) {
+                let itemName = prompt(`Enter item name #${item}`);
+                alert(`${item} : ${itemName}`);
+            }
+            alert('Shopping Done!');
 
         </script>
     </body>
