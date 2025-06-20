@@ -90,6 +90,51 @@
         
 
 
+            let profile = {
+                name: "Rose Ndikiru",
+                age: 26,
+                profession: "Web Developer",
+                country: "Kenya"
+            };
+            function showKeys(obj) {
+                console.log(Object.keys(obj));
+                }
+
+            function showValues(obj) {
+                console.log(Object.values(obj));
+            }
+
+            function showEntries(obj) {
+                for (let [key, value] of Object.entries(obj)) {
+                    console.log(`${key}: ${value}`);
+                }
+            }
+
+            function addField(obj, key, value) {
+                obj[key] = value;
+                console.log(`Added: ${key} = ${value}`);
+            }
+
+            function removeField(obj, key) {
+                if (key in obj) {
+                    delete obj[key];
+                    console.log(`Removed: ${key}`);
+                } else {
+                    console.log(`${key} does not exist in profile`);
+                }
+            }
+            showEntries(profile);
+            addField(profile, "hobby", "Photography");
+            removeField(profile, "age");
+            showKeys(profile);
+            showValues(profile);
+            showEntries(profile);
+
+
+
+
+
+
         </script>
     </body>
 </html>
