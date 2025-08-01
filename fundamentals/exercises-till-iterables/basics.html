@@ -136,6 +136,50 @@
             let results = mathMultiply(12, 2);
             alert(results);
 
+            let getSquare = number => number * number;
+            let c = +prompt('Enter a number');
+            alert(getSquare(c)); 
+
+            //Objects
+            let car = {
+                color: 'red',
+                make: 'Subaru',
+                year: 2009,
+                logBrand() {
+                    console.log(this.make, this.year);
+                }
+            };
+
+            car.logBrand();
+            car.age = 10;
+            delete car.year;
+            alert(car);
+
+            let vehicle = {
+                windows: 4
+            };
+
+            //Changing car.windows won’t affect vehicle.windows.
+            //Because they are two different objects in memory.
+            car = Object.assign({}, vehicle);
+            car.windows = 2;
+
+            alert(JSON.stringify(vehicle)); // {"windows":4}
+            alert(JSON.stringify(car));     // {"windows":2}
+
+            //constructors
+            function Person (name, age) {
+                this.name = name;
+                this.age = age;
+                this.sayHi = function() {
+                    alert('Hello!');
+                }
+            }
+            let person1 = new Person('James', 23);
+            let person2 = new Person('Rachel', 20);
+            person1.sayHi();
+
+
 
         </script>
     </body>

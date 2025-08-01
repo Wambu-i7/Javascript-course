@@ -1,0 +1,40 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Objects</title>
+    </head>
+    <body>
+        <script>
+            let user = {
+                name:'John',
+                years: 30
+            };
+
+            let {name, years: age, isAdmin = false} = user;
+            alert( name ); 
+            alert( age );
+            alert( isAdmin );
+
+            let salaries = {
+                "John": 100,
+                "Pete": 300,
+                "Mary": 250
+            };
+
+            function topSalary(salaries) {
+               let maxSalary = 0;
+               let mostPaid = null;
+
+
+               for (let [name, salary]of Object.entries(salaries)) {
+                    if (salary > maxSalary) {
+                        maxSalary = salary;
+                        mostPaid = name;
+                    }
+               }
+               return mostPaid;
+            }
+            alert(topSalary(salaries))
+        </script>
+        </body>
+</html>

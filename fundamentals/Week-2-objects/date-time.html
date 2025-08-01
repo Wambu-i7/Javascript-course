@@ -1,0 +1,113 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Objects</title>
+    </head>
+    <body>
+        <script>
+            //European countries have days of week starting with Monday (number 1), 
+            // then Tuesday (number 2) and till Sunday (number 7). 
+            // Write a function getLocalDay(date) that returns the “European” day of week for date.
+           function getLocalDay(date) {
+            let day = date.getDay();
+                if (day == 0) {
+                    day = 7;
+                }
+                return day;
+           }
+        
+
+           function getDateAgo(date, days) {
+                let dateCopy = new Date(date);
+
+                dateCopy.setDate(date.getDate() - days);
+                return dateCopy.getDate();
+            }
+
+            let date = new Date(2015, 0, 2);
+
+            //getlast day of the month
+
+            function getLastDayOfMonth(year, month) {
+                let date = new Date(year, month + 1, 0);
+
+                return date.getDate();
+            }
+
+            //get seconds oftoday til the current time.
+
+            function getSecondsToday() {
+                let now = new Date();
+
+                // create an object using the current day/month/year
+                let today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+                let diff = now - today; // ms difference
+                return Math.round(diff / 1000); // make seconds
+            }
+
+            alert( getSecondsToday() );
+            //atlternatively.
+
+            function getSecondsToday() {
+                let d = new Date();
+                return d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds();
+            }
+
+            alert( getSecondsToday() );
+
+            //how many seconds till tomorrow?
+
+            function getSecondsToTomorrow() {
+                let now = new Date();
+
+                // Create a Date object for *tomorrow at 00:00:00*
+                //new Date called with only three arguments or without time,
+                //gives a default time of midnight 00:00:00.
+                let tomorrow = new Date(
+                    now.getFullYear(),
+                    now.getMonth(),
+                    now.getDate() + 1
+                );
+
+                let diff = tomorrow - now;       // difference in milliseconds
+                return Math.round(diff / 1000);  // convert to seconds
+                }
+                /* Write a function formatDate(date) that should format date as follows:
+
+                    If since date passed less than 1 second, then "right now".
+                    Otherwise, if since date passed less than 1 minute, then "n sec. ago".
+                    Otherwise, if less than an hour, then "m min. ago".
+                    Otherwise, the full date in the format "DD.MM.YY HH:mm". That is: "day.month.year hours:minutes", all in 2-digit format, e.g. 31.12.16 10:00.
+                */
+                function formatDate(date) {
+  let now = new Date();
+  let diff = now - date; // difference in milliseconds
+
+  if (diff < 1000) {
+    return 'right now';
+  }
+
+  let seconds = Math.floor(diff / 1000);
+  if (seconds < 60) {
+    return `${seconds} sec. ago`;
+  }
+
+                    let minutes = Math.floor(diff / 60000); // 60 * 1000
+                    if (minutes < 60) {
+                        return `${minutes} min. ago`;
+                    }
+
+                    // Else: format as DD.MM.YY HH:mm
+                    let day = date.getDate().toString().padStart(2, '0');
+                    let month = (date.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-based
+                    let year = date.getFullYear().toString().slice(-2);
+                    let hours = date.getHours().toString().padStart(2, '0');
+                    let minutesPart = date.getMinutes().toString().padStart(2, '0');
+
+                    return `${day}.${month}.${year} ${hours}:${minutesPart}`;
+            }
+
+        </script>
+        </body>
+</html>

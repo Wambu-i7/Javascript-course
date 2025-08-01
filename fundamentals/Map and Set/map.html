@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Map and set</title>
+    </head>
+    <body>
+        <script>
+            let values = ["Hare", "Krishna", "Hare", "Krishna",
+                     "Krishna", "Krishna", "Hare", "Hare", ":-O"
+                ];
+            function unique(arr) {
+                return Array.from(new Set(arr));
+            }
+            alert( unique(values) );
+
+            //Write a function aclean(arr) that returns an array cleaned from anagrams.
+            let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+            function aclean(arr) {
+                let map = new Map();
+                //Iterates over each word in the array.
+                for (let word in arr) {
+                    let sorted = word.toLowerCase().split('').sort().join('');
+                    //word.toLowerCase() → makes it case-insensitive
+                    //.split('') → turns the string into an array of letters
+                    //.sort() → sorts those letters alphabetically
+                    //.join('') → joins them back into a string
+                    map.set(sorted, word);
+                    //for each unique combination of letters, only one word is kept.
+                    //If another word with the same sorted key comes along,
+                    // it replaces the previous one.
+                    return Array.from(map.values());
+                    //Extracts the unique words (values) from the map into an array.
+                }
+            }
+
+        </script>
+    </body>
+</html>

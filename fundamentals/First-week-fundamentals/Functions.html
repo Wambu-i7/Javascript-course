@@ -5,7 +5,56 @@
     </head>
     <body>
         <script>
+
+            //Grade checker.
             
+            function getGrade(score) {
+                if (score >= 90) return 'A';
+                else if (score >= 80) return 'B';
+                else if (score >= 70) return 'C';
+                else if (score >= 60) return 'D';
+                else return 'F';
+            }
+            let score = +prompt('Please enter your score');
+            if (isNaN(score) || score < 0 || score > 100) {
+                alert('Invalid score entered');
+            } else {
+                let grade = getGrade(score);
+                alert(`Grade: ${grade}`);
+            }
+
+        //random number
+        let number = Math.floor(Math.random() * 10) + 1;
+        let attempts = 3;
+
+        while (attempts > 0) {
+            let yourNum = prompt('please enter a random number between 1-10');
+             if (yourNum === null) {
+                break;
+            }
+
+            if (isNaN(yourNum) || yourNum.trim() === "") {
+                alert('NOT VALID');
+                continue;
+            }
+            yourNum = Number(yourNum);
+
+            if (yourNum == number) {
+                alert('CONGRATULATIONS, that is the number');
+                break;
+            } else {
+                attempts--;
+                if (attempts > 0) {
+                    alert(`❌ Wrong number. You have ${attempts} attempt(s) left.`);
+                }
+            }
+        }
+        if (attempts == 0) {
+            alert(`Game over! The correct number was ${number}`);
+        }
+            
+            
+
         </script>
     </body>
 </html>
