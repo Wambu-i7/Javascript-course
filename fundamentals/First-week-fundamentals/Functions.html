@@ -5,7 +5,7 @@
     </head>
     <body>
         <script>
-
+            /*
             //Grade checker.
             
             function getGrade(score) {
@@ -39,7 +39,7 @@
             }
             yourNum = Number(yourNum);
 
-            if (yourNum == number) {
+            if (yourNum === number) {
                 alert('CONGRATULATIONS, that is the number');
                 break;
             } else {
@@ -49,12 +49,112 @@
                 }
             }
         }
-        if (attempts == 0) {
+        if (attempts === 0) {
             alert(`Game over! The correct number was ${number}`);
         }
+    //calculator.
+        function calculate(a, b, operator) {
+            if (operator === '+') {
+                return a + b;
+            } else if (operator === '-' && a > b) {
+                return a - b;
+            } else if (operator === '/' && a > b && a !== 0) {
+                return a / b;
+            } else if (operator === '*') {
+                return a * b;
+            } else if (!operator) {
+                alert('Inalid operaton!');
+            }
+        }
+        let a = prompt('Please enter a number: a');
+        let operator = prompt('Enter an operator');
+        let b = prompt('Enter the second number: b');
+
+        if (a === null || b === null || operator === null || a.trim() === '' || b.trim() === '' || isNaN(a) || isNaN(b)) {
+            alert('Invalid input!');
+        } else {
+            // Convert to numbers
+            a = +a;
+            b = +b;
+
+            const result = calculate(a, b, operator);
+            if (result !== null) {
+                console.log(`Result: ${result}`);
+                alert(`Result: ${result}`);
+            }
+        }
+
+
+        //Write a function sumTo(n) that calculates the sum of numbers 1 + 2 + ... + n.
+        function sumTo(n) {
+            let result = 0;
+            for (let i = 1; i <= n; i++) {
+               result = result + i;
+            }
+            return result;
+        }
+        alert(sumTo(100));
+
+
+        // recursive method.
+        function sumTo(n) {
+            if (n === 1) {
+                return 1;
+            } else {
+                return n + sumTo(n - 1);
+            }
+        }
+        */
+
+        //factorial recursive.
+
+        function factorial(n) {
+            if (n === 1) {
+                return 1;
+            } else 
+            return n * factorial(n-1);
+        }
+        alert( factorial(5) ); 
+        //fibonacci
+        function fib(n) {
+            if (n === 0) return 0;
+            if (n === 1) return 1;
+            return fib(n - 1) + fib(n - 2);
+        }
+        alert(fib(10));
+
+        let list = {
+            value: 1,
+            next: {
+                value: 2,
+                next: {
+                    value: 3,
+                    next: {
+                        value: 4,
+                        next: null
+            }
+            }
+        }
+        };
+
+        function printList(list) {
+            if (list === null) return;
+            alert(list.value);
+            printList(list.next);
+        }
+        //reverse recursion
+        function reversePrintList(list) {
+            if (list === null) return;
+
+            reversePrintList(list.next);
             
+            alert(list.value);
             
+        }
+
+
+
 
         </script>
     </body>
-</html>
+</html
