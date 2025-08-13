@@ -85,6 +85,40 @@
             }
         }
         guessGame();
+        //Write a JavaScript program to calculate multiplication 
+        // and division of two numbers (input from the user).  
+        function multiplyAndDivide() {
+            let num1 = +prompt('please enter a number');
+            if (isNaN(num1)) {
+                return 'Invalid second number entered.';
+            }
+            
+            let operator;
+            while (true) {
+                operator = prompt('Please enter operator: multiplication(*) or division(/)');
+                if (operator === '*' || operator === '/') {
+                    break; // valid operator, exit loop
+                }
+                alert('Invalid operator entered. Please try again.');
+            }
+
+            let num2 = +prompt('Please enter another number');
+
+             if (isNaN(num2)) {
+                return 'Invalid number entered.';
+            }
+
+            if (operator === '*') {
+                return num1 * num2;
+            } else if (operator === '/') {
+                if (num2 === 0) {
+                    return 'Error: Cannot divide by zero.';
+                }
+                return num1 / num2;
+            }  
+        }
+        
+        console.log(multiplyAndDivide());
         
 
     </script>

@@ -73,6 +73,18 @@
             }
         }
         janFirstSunday();
+        //Days left before chrismas
+        function daysBeforeChristmas() {
+            let now = new Date();
+            let chrismas = new Date(2025, 11, 25);
+            let diffInMs = chrismas - now; // difference in milliseconds
+            // convert ms → days
+            let daysBefore = Math.ceil(diffInMs / (1000 * 60 * 60 * 24));
+
+            return daysBefore;
+        }
+        console.log(`${daysBeforeChristmas()} days left until Christmas 🎄`);
+
 
     </script>
 </body>
