@@ -1,161 +1,31 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html>
     <head>
-        <title>array Methods</title>
+        <title>Arrays</title>
     </head>
     <body>
         <script>
-            //Translate with split and join.
+            let pets = [];
+            pets.push('hen');
+            console.log(pets);
+            pets.unshift('dog');
+            console.log(pets);
+            pets.push('cat');
+            console.log(pets);
+            pets.pop();
+            console.log(pets);
+            pets.push('puppy');
+            console.log(pets);
+            pets.shift();
+            console.log(pets);
+            console.log(pets[1]);
 
-            function camelize(str) {
-            //return str.split('-').map(...).join('');
-
-                return str
-                .split('-')
-                .map((word, index) =>
-                    index === 0
-                        ? word.toLowerCase()
-                        : word[0].toUpperCase() + word.slice(1)
-                    )
-                    .join('');
-            }
-            alert(camelize('background-color'));
-
-            //Filter range
-            /*
-            function filterRange(arr, a, b) {
-                let result = [];
-                for (let i = 0; i < arr.length; i++) {
-                    if (arr[i] >= a && arr[i] <= b) {
-                    result.push(arr[i]);
-                    }
-                }
-                return result;
-                }
-            */
-            function filterRange(arr, a, b) {
-                return arr.filter(item => item >= a && item <= b);
-            }
-            
-
-            function filterRangeInPlace(arr, a, b) {
-                for (let i = arr.length - 1; i >= 0; i--) {
-                    if (arr[i] < a || arr[i] > b) {
-                    arr.splice(i, 1);
-                    }
-                }
+            for (let i = 0; i < pets.length; i++) {
+                console.log(pets[i]);
             }
 
-            let arr = [5, 2, 1, -10, 8];
+            console.log(pets.indexOf('dog'));
 
-            arr.sort((a, b) =>  b - a);
-
-            alert( arr );
-
-            //Copy and sort array.
-
-            let array1 = ["HTML", "JavaScript", "CSS"];
-
-            function copySorted(arr) {
-                return arr.slice().sort();
-            }
-            let sorted = copySorted(array1);
-            alert( sorted );
-            alert( array1 );
-
-            //Map to names
-            let users = [
-                { name: "John", age: 25 },
-                { name: "Mary", age: 23 },
-                { name: "Smith", age: 30 }
-            ];
-            let names = users.map(user => user.name);
-
-            alert(names);
-
-            let products = [
-                { name: "Laptop", price: 800, category: "Electronics" },
-                { name: "Shirt", price: 25, category: "Clothing" },
-                { name: "Coffee Maker", price: 100, category: "Kitchen" }
-            ];
-
-            let productNames = products.map(item => item.name);
-
-            let productPrices = products.map(item => item.price);
-
-            alert(productNames);
-            alert(productPrices);
-
-            //SORT
-            function sortByAge(users) {
-                let sortedAges = ages.sort((a,b) => a.age - b.age);
-            }
-            let john = { name: "John", age: 25 };
-            let pete = { name: "Pete", age: 30 };
-            let mary = { name: "Mary", age: 28 };
-
-            let array3 = [ pete, john, mary ];
-
-            sortByAge(array3);
-
-            // now sorted is: [john, mary, pete]
-            alert(array3[0].name); // John
-            alert(array3[1].name); // Mary
-            alert(array3[2].name); // Pete
-
-            //Shuffle items in an array
-
-            function shuffleArray(array) {
-                for (let i = array.length - 1; i > 0; i--) {
-                    // Pick a random index from 0 to i
-                    const j = Math.floor(Math.random() * (i + 1));
-                    // Swap array[i] and array[j]
-                    [array[i], array[j]] = [array[j], array[i]];
-                }
-                return array;
-                }
-
-                const numbers = [1, 2, 3, 4, 5];
-                console.log(shuffleArray(numbers));
-
-                //average age of users
-
-                function getAverageAge(users) {
-                    return users.reduce((acc, user) => acc + user.age, 0) / users.length;
-                }
-
-                alert( getAverageAge(array3) );
-
-                // Minimum and amximum ages
-                function getMaxAge(users) {
-                    return users.reduce((max, user) => (user.age > max ? user.age : max), 0);
-                }
-
-                    alert(getMaxAge(array3));
-
-                function getMinAge(users) {
-                    return users.reduce((min, user) => (user.age < min ? user.age : min), users[0].age);
-                }
-                    alert(getMinAge(array3));
-
-
-            //Filter unique Array members
-            function unique(arr) {
-                return arr.filter((name, index, arr) => {
-                    return arr.indexOf(name) === index;
-                });
-            }
-
-            let strings = ["Hare", "Krishna", "Hare", "Krishna",
-                "Krishna", "Krishna", "Hare", "Hare", ":-O"
-            ];
-
-            alert( unique(strings) );
-
-
-            
-
-            
         </script>
     </body>
 </html>

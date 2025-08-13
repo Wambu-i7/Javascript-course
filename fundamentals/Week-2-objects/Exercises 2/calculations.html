@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculations</title>
+</head>
+<body>
+    <script>
+        //Write a JavaScript program to find the area of a 
+        // triangle where three sides are 5, 6, 7.  
+
+        function area(a, b, c) {
+            //semi-perimeter
+            let s = (a + b + c) / 2;
+
+            // Step 2: Heron's formula
+            return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+
+    
+        }
+        console.log(area(5, 6, 7).toFixed(2));
+        //Write a JavaScript program to rotate the string 'w3resource' 
+        // in the right direction. This is done by periodically removing one 
+        // letter from the string end and attaching it to the front.  
+
+        let text = "w3resource";
+        function rotateRight(str) {
+            let rotations = 0;
+
+            let timer = setInterval(() => {
+            // Rotate right
+            str = str[str.length - 1] + str.slice(0, -1);
+            console.log(str);
+
+            rotations++;
+
+            // When done rotating
+            if (rotations === "w3resource".length) {
+                clearInterval(timer);
+
+                
+                console.log("Done!");
+            }
+            }, 1000);
+        }
+            rotateRight(text);
+
+        //reverse the string
+        function reverseString(str) {
+            return str.split("").reverse().join("");
+        }
+        console.log(reverseString(text));
+        console.log('reversed');
+        //gues random number between 1 and 10
+        function guessGame() {
+            let randomNum = Math.floor(Math.random() * 10) + 1;
+            let number;
+            let attempts = 3;
+            while(attempts > 0) {
+               let input = prompt('Please enter a number between 1 and 10');
+
+                if (input === null) {
+                    alert('Game cancealled');
+                    break;
+                } 
+                
+                number = +input;
+                if (input.trim() === "" || isNaN(number) || number < 1 || number > 10) {
+                    alert('Invalid input. Please enter a number between 1 and 10');
+                    continue;
+                }
+                if (number === randomNum) {
+                        alert('Great job!, you guessed it right');
+                        break;
+                } else {
+                         attempts--;
+                         if(attempts > 0) {
+                            alert(`Wrong guess. Please try again! You have ${attempts} attempts`);
+                         }
+                   }   
+            }
+            if (attempts === 0 && number !== randomNum) {
+                alert(`Sorry! The correct number was ${randomNum}.`);
+            }
+        }
+        guessGame();
+        
+
+    </script>
+</body>
+</html>
